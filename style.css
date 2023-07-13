@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --ff-base: "Barlow Semi Condensed", sans-serif;
+  --fs-b: 13px;
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-b);
+  background-color: var(--Light-grayish-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body h2 {
+  opacity: 50%;
+}
+
+body p {
+  opacity: 70%;
+}
+
+main {
+  width: 1200px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+article:nth-child(1) {
+  grid-column: span 2;
+  background-color: var(--Moderate-violet);
+  color: white;
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 18%;
+}
+
+article:nth-child(2) {
+  background-color: var(--Very-dark-grayish-blue);
+  color: white;
+}
+
+article:nth-child(3) {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: white;
+  color: var(--Very-dark-blackish-blue);
+}
+
+article:nth-child(4) {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-column: span 2;
+  background-color: var(--Very-dark-blackish-blue);
+  color: white;
+}
+
+article:nth-child(5) {
+  grid-column-start: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: white;
+  color: var(--Very-dark-blackish-blue);
+}
+
+article {
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.art-header {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+
+.art-header img {
+  width: 40px;
+  border-radius: 100%;
+  border: solid 3px;
+}
+
+.art-header .name {
+  padding-left: 20px;
+}
+
+.art-header .name h2 {
+  font-size: 12px;
+}
+
+.art-para {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.art-para b {
+  margin-bottom: 1rem;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
